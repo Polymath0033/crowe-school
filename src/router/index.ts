@@ -7,17 +7,59 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: { title: "Crowe Int'l schools" }
     },
     {
-      path: '/about',
+      path: '/about-us',
       name: 'about',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/AboutView.vue'),
+      meta: { title: "About us - Crowe Int'l schools" }
+    },
+    {
+      path: '/careers',
+      name: 'careers',
+      component: () => import('../views/Career.vue'),
+      meta: { title: "Careers - Crowe Int'l schools" }
+    },
+    {
+      path: '/admissions',
+      name: 'admissions',
+      component: () => import('../views/Admission.vue'),
+      meta: { title: "Admissions - Crowe Int'l schools" }
+    },
+    {
+      path: '/media-zone',
+      name: 'media-zone',
+      component: () => import('../views/Media.vue'),
+      meta: { title: "Media - Crowe Int'l schools" }
+    },
+    {
+      path: '/faq',
+      name: 'faqs',
+      component: () => import('../views/FAQs.vue'),
+      meta: { title: "FAQ - Crowe Int'l schools" }
+    },
+    {
+      path: '/payments',
+      name: 'payments',
+      component: () => import('../views/Payments.vue'),
+      meta: { title: "Payments - Crowe Int'l schools" }
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import('../views/Contact.vue'),
+      meta: { title: "Contact - Crowe Int'l schools" }
     }
   ]
 })
-
+router.beforeEach((to, from, next) => {
+  //@ts-ignore
+  document.title = to.meta.title ?? "Crowe Int'l Schools"
+  next()
+})
 export default router
