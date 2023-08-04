@@ -54,6 +54,12 @@ const router = createRouter({
       name: 'contact',
       component: () => import('../views/Contact.vue'),
       meta: { title: "Contact - Crowe Int'l schools" }
+    },
+    {
+      path:'/news',
+      name:'news',
+      component:()=>import('../views/News.vue'),
+      meta:{title:'News -  Crowe Int\'l schools'}
     }
   ]
 })

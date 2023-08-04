@@ -51,7 +51,7 @@ import HeroImage from '@/components/UI/HeroImage.vue';
                 We are poised towards the all-round development of the children committed into our care.
             </p>
             <div class="link">
-                <router-link to="/admissions/#"><i class="bi bi-download"></i>Nursery and Primary School Form</router-link>
+                <router-link to="/admissions/#"><i class="bi bi-download"></i>Nursery & Pry School Form</router-link>
                 <router-link to="/admissions/#"><i class="bi bi-download"></i>Secondary school form</router-link>
             </div>
             <p>After downloading and filling the application form, kindly send the filled e-copy to
