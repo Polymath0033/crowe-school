@@ -56,11 +56,12 @@ const router = createRouter({
       meta: { title: "Contact - Crowe Int'l schools" }
     },
     {
-      path:'/news',
-      name:'news',
-      component:()=>import('../views/News.vue'),
-      meta:{title:'News -  Crowe Int\'l schools'}
-    }
+      path: '/news',
+      name: 'news',
+      component: () => import('../views/News.vue'),
+      meta: { title: "News -  Crowe Int'l schools" }
+    },
+    { path: '/news/:news', name: 'News', component: () => import('../components/NewsPage.vue') }
   ]
 })
 router.beforeEach((to, from, next) => {

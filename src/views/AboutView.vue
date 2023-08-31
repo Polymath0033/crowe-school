@@ -70,28 +70,6 @@ const arrays: { img: string, title: string, position: string }[] = [{
       </div>
     </div>
     <anthem></anthem>
-    <!-- <div class="anthem">
-      <h2>School Anthem</h2>
-    
-      <div style="display:flex">
-        <marquee>There's a rock solid learning Citadel
-          With a solid base like a Gibraltar
-          There's a school that stands out as a model
-          And a future leader Alma mater
-          There's a place to be fit as a fiddle
-          Where physical and mental growth matters
-          There's a place where moral never dwindles, but boost knowledge and make future brighter
-          Crowe Schools will never fail
-          To raise students that all hails
-          Crowe Schools will ever pass Sound knowledge to students En Mass.
-          ***Crowe Schools, Leading with Cognition!***
-          <i><font-awesome-icon icon="fa-solid fa-music"></font-awesome-icon></i>
-        </marquee>
-        <audio controls autoplay muted>
-          <source src="../assets/Crowe-Schools-Anthem.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-    </div> -->
     <div class="management">
       <h2>Management Staff</h2>
       <h6>You will find our staff to be warm, friendly and committed when you visit our school.
@@ -184,9 +162,7 @@ const arrays: { img: string, title: string, position: string }[] = [{
   text-align: center;
 }
 
-.anthem {
-  margin-top: 2rem;
-}
+
 
 .anthem h2,
 .management h2 {
