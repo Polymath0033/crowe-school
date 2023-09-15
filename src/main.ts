@@ -2,8 +2,9 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import NewsUi from "./components/news/NewsUi.vue"
 import {
   faWalking,
   faEye,
@@ -38,8 +39,10 @@ library.add(
 )
 const app = createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon)
+app.component('news-ui',NewsUi)
 app.use(createPinia())
 app.use(router)
+
 //@ts-ignore
 app.use(VueTelInput, globalOptions)
 app.mount('#app')

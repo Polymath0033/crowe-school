@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useDataStore } from '@/stores/data';
 import { imageLink } from '@/helpers/image-link';
+import { modifiedLink } from '@/helpers/route-helper'
 const data = useDataStore();
 defineProps<{}>()
 </script>
@@ -14,14 +15,14 @@ defineProps<{}>()
                     <span class="category">{{ article.category }}</span>
                 </router-link>
                 <h2>
-                    <router-link to="/news/Hello">
+                    <router-link :to="`/news/${modifiedLink(article.title)}`">
                         {{ article.title }}
                     </router-link>
                 </h2>
-                <router-link to="/news/Hi">
+                <router-link :to="`/news/${modifiedLink(article.title)}`">
                     <img :src="imageLink(article.image)" />
                 </router-link>
-                <p>{{ article.content }}</p>
+                <p>{{ article.content }}...</p>
                 <div class="footer">
                     <router-link to="/news/umaru">
                         <span>{{ article.author }}</span>
@@ -65,11 +66,13 @@ section {
     transition-property: opacity, transform;
     transition-duration: 1.5s;
     transition-timing-function: cubic-bezier(0.2, 1, 0.2, 1);
+    animation-name: fadeInLeft;
     color: #192A3d;
 }
 
 .card img {
     width: 100%;
+    height: 350px;
 }
 
 .card a {
@@ -81,6 +84,7 @@ section {
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 600;
+    color: #3a4f66;
 }
 
 .span-news,
@@ -93,9 +97,13 @@ section {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* .card h2 {} */
+
 .card h2 a {
     font-size: 18px;
     line-height: 1.3;
+    color: #192A3d;
+
 }
 
 .card p {
@@ -104,15 +112,13 @@ section {
     word-break: break-word;
     font-size: 16px;
     font-weight: 400;
-    /* white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
-    display: -webkit-box;
+
+    /* display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-    /* Number of lines to display */
+
     overflow: hidden;
-    max-height: 5rem;
+    max-height: 5rem; */
 }
 
 .footer {
@@ -123,6 +129,10 @@ section {
     display: flex;
     gap: 0.5rem;
 
+}
+
+.footer a {
+    color: #3a4f66;
 }
 
 .card h2 {
